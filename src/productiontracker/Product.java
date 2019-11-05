@@ -14,7 +14,12 @@ public abstract class Product implements Item {
   public String manufacturer;
   private String name;
 
-  //Constructor that sets the variables to their values.
+  /**
+   * Constructor that sets values to the variables.
+   * @param name
+   * @param manufacturer
+   * @param type
+   */
   public Product(String name, String manufacturer, ItemType type) {
     this.name = name;
     this.manufacturer = manufacturer;
