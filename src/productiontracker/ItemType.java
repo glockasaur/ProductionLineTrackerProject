@@ -2,6 +2,7 @@ package productiontracker;
 
 /**
  * Enum that gives each item type a 2 letter code.
+ *
  * @author Odalys Martinez-Villa.
  */
 public enum ItemType {
@@ -10,11 +11,13 @@ public enum ItemType {
   AudioMobile("AM"),
   VisualMobile("VM");
 
+  // String variable.
   public final String values;
 
   /**
-   * constructor
-   * @param value
+   * constructor that sets a value to the variable.
+   *
+   * @param value - value.
    */
   ItemType(String value) {
     values = value;
@@ -22,6 +25,7 @@ public enum ItemType {
 
   /**
    * Getter method.
+   *
    * @return - values.
    */
   public String getValues() {

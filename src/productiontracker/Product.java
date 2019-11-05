@@ -2,13 +2,14 @@ package productiontracker;
 
 /**
  * Abstract class that has fields for the products and getters/setter methods for those fields.
- * Fields include productID, product type, product manufacturer, and product name.
- * This class is abstract and uses interface Item.
+ * Fields include productID, product type, product manufacturer, and product name. This class is
+ * abstract and uses interface Item.
+ *
  * @author - Odalys Martinez-Villa
  */
 public abstract class Product implements Item {
 
-  //field variables
+  // field variables
   private int productID;
   private ItemType Type;
   public String manufacturer;
@@ -16,6 +17,7 @@ public abstract class Product implements Item {
 
   /**
    * Constructor that sets values to the variables.
+   *
    * @param name
    * @param manufacturer
    * @param type
@@ -26,10 +28,11 @@ public abstract class Product implements Item {
     this.Type = type;
   }
 
-  //GETTERS AND SETTERS METHODS
+  // GETTERS AND SETTERS METHODS
 
   /**
    * get Type of product.
+   *
    * @return - Type.
    */
   public ItemType getType() {
@@ -38,6 +41,7 @@ public abstract class Product implements Item {
 
   /**
    * get product ID.
+   *
    * @return - productID.
    */
   public int getProductID() {
@@ -46,6 +50,7 @@ public abstract class Product implements Item {
 
   /**
    * get manufacturer of product.
+   *
    * @return - manufacturer.
    */
   public String getManufacturer() {
@@ -54,6 +59,7 @@ public abstract class Product implements Item {
 
   /**
    * set manufacturer to manufacturer.
+   *
    * @param manufacturer - manufacturer of product.
    */
   public void setManufacturer(String manufacturer) {
@@ -62,6 +68,7 @@ public abstract class Product implements Item {
 
   /**
    * get name of product.
+   *
    * @return - name.
    */
   public String getName() {
@@ -70,6 +77,7 @@ public abstract class Product implements Item {
 
   /**
    * set name of product.
+   *
    * @param name - name.
    */
   public void setName(String name) {
@@ -78,6 +86,7 @@ public abstract class Product implements Item {
 
   /**
    * Will print out a String that gives information about the particular product.
+   *
    * @return - String.
    */
   public String toString() {

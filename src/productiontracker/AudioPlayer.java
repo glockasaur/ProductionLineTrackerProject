@@ -1,18 +1,20 @@
 package productiontracker;
 
 /**
- * Adds audio specifications and media types of the Product produced.
- * Inherits from Product.
+ * Adds audio specifications and media types of the Product produced. Inherits from Product.
  * Implements from the interface MultimediaControl.
+ *
  * @author - Odalys Martinez-Villa.
  */
 public class AudioPlayer extends Product implements MultimediaControl {
-  //variables
+  // variables
   private String audioSpecification;
   private String mediaType;
 
   /**
-   * Constructor
+   * Constructor that sets values to the variables.
+   * Inherits from Product class.
+   *
    * @param name - name of product, inherited.
    * @param manufacturer - manufacturer of product, inherited.
    * @param type - type of item, inherited.
@@ -32,6 +34,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   /**
    * initialize placeholders for audioSpecification and mediaType.
+   *
    * @return - prints a String.
    */
   public String toString() {
@@ -40,36 +43,30 @@ public class AudioPlayer extends Product implements MultimediaControl {
     return super.toString() + spec + media;
   }
 
-  /**
-   * prints "playing" when called to play.
-   */
+  /** prints "playing" when called to play. */
   public void play() {
     System.out.println("Playing");
   }
 
-  /**
-   * prints "stopping" when called to stop.
-   */
+  /** prints "stopping" when called to stop. */
   public void stop() {
     System.out.println("Stopping");
   }
 
-  /**
-   * prints "next" when called to next.
-   */
+  /** prints "next" when called to next. */
   public void next() {
     System.out.println("Next");
   }
 
-  /**
-   * prints "previous" when called to go previous.
-   */
+  /** prints "previous" when called to go previous. */
   public void previous() {
     System.out.println("Previous");
   }
 
-  //GETTERS AND SETTERS
+  // GETTERS AND SETTERS
   /**
+   * get audio specification.
+   *
    * @return - audioSpecification
    */
   public String getAudioSpecification() {
@@ -77,13 +74,17 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * @param audioSpecification
+   * set audio specification.
+   *
+   * @param audioSpecification - audio specification.
    */
   public void setAudioSpecification(String audioSpecification) {
     this.audioSpecification = audioSpecification;
   }
 
   /**
+   * get media type.
+   *
    * @return - mediaType.
    */
   public String getMediaType() {
@@ -91,7 +92,9 @@ public class AudioPlayer extends Product implements MultimediaControl {
   }
 
   /**
-   * @param mediaType
+   * set media type.
+   *
+   * @param mediaType - media type.
    */
   public void setMediaType(String mediaType) {
     this.mediaType = mediaType;
