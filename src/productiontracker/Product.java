@@ -10,22 +10,22 @@ package productiontracker;
 public abstract class Product implements Item {
 
   // field variables
-  private int productID;
-  private ItemType Type;
+  private int productID; // inspection code warning: Field is never assigned.
+  private final ItemType type;
   public String manufacturer;
   private String name;
 
   /**
    * Constructor that sets values to the variables.
    *
-   * @param name
-   * @param manufacturer
-   * @param type
+   * @param name - name.
+   * @param manufacturer - manufacturer.
+   * @param type - type.
    */
-  public Product(String name, String manufacturer, ItemType type) {
+  Product(String name, String manufacturer, ItemType type) {
     this.name = name;
     this.manufacturer = manufacturer;
-    this.Type = type;
+    this.type = type;
   }
 
   // GETTERS AND SETTERS METHODS
@@ -36,7 +36,7 @@ public abstract class Product implements Item {
    * @return - Type.
    */
   public ItemType getType() {
-    return Type;
+    return type;
   }
 
   /**
@@ -90,6 +90,6 @@ public abstract class Product implements Item {
    * @return - String.
    */
   public String toString() {
-    return "Name: " + name + '\n' + "Manufacturer: " + manufacturer + '\n' + "Type: " + Type + '\n';
+    return "Name: " + name + '\n' + "Manufacturer: " + manufacturer + '\n' + "Type: " + type + '\n';
   }
 }

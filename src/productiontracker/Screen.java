@@ -9,9 +9,9 @@ package productiontracker;
  */
 public class Screen implements ScreenSpec {
   // Variables of Screen
-  private String Resolution;
-  private int RefreshRate;
-  private int ResponseTime;
+  private String resolution;
+  private int refreshRate;
+  private int responseTime;
 
   /**
    * Constructor that sets values to the variables.
@@ -20,10 +20,13 @@ public class Screen implements ScreenSpec {
    * @param refreshRate - screen refresh rate.
    * @param responseTime - screen response time.
    */
-  Screen(String resolution, int refreshRate, int responseTime) {
-    this.Resolution = resolution;
-    this.RefreshRate = refreshRate;
-    this.ResponseTime = responseTime;
+  Screen(
+      String resolution,
+      int refreshRate,
+      int responseTime) { // inspection code warning: Constructor is never used.
+    this.resolution = resolution;
+    this.refreshRate = refreshRate;
+    this.responseTime = responseTime;
   }
 
   /**
@@ -35,13 +38,13 @@ public class Screen implements ScreenSpec {
     return "Screen:"
         + "\n"
         + "Resolution: "
-        + Resolution
+        + resolution
         + "\n"
         + "Refresh rate: "
-        + RefreshRate
+        + refreshRate
         + "\n"
         + "Response time: "
-        + ResponseTime;
+        + responseTime;
   }
 
   // GETTER AND SETTER METHODS
@@ -52,7 +55,7 @@ public class Screen implements ScreenSpec {
    * @return resolution.
    */
   public String getResolution() {
-    return Resolution;
+    return resolution;
   }
 
   /**
@@ -61,7 +64,7 @@ public class Screen implements ScreenSpec {
    * @param resolution - screen resolution.
    */
   public void setResolution(String resolution) {
-    Resolution = resolution;
+    this.resolution = resolution;
   }
 
   /**
@@ -70,16 +73,16 @@ public class Screen implements ScreenSpec {
    * @return - refresh rate.
    */
   public int getRefreshRate() {
-    return RefreshRate;
+    return refreshRate;
   }
 
   /**
    * set screen's refresh rate.
    *
-   * @param refreshRate
+   * @param refreshRate - refresh rate.
    */
   public void setRefreshRate(int refreshRate) {
-    RefreshRate = refreshRate;
+    this.refreshRate = refreshRate;
   }
 
   /**
@@ -88,15 +91,15 @@ public class Screen implements ScreenSpec {
    * @return response time.
    */
   public int getResponseTime() {
-    return ResponseTime;
+    return responseTime;
   }
 
   /**
    * set screen's response time.
    *
-   * @param responseTime
+   * @param responseTime - response time.
    */
   public void setResponseTime(int responseTime) {
-    ResponseTime = responseTime;
+    this.responseTime = responseTime;
   }
 } // end of class Screen.

@@ -5,40 +5,40 @@ package productiontracker;
  *
  * @author - Odalys Martinez-Villa
  */
-public interface Item {
+interface Item {
 
   /**
    * get product ID.
    *
    * @return null.
    */
-  int getProductID();
+  int getProductID(); // inspection code warning: method is never used.
 
   /**
    * set name.
    *
    * @param name - name.
    */
-  void setName(String name);
+  void setName(String name); // inspection code warning: Method is never used.
 
   /**
    * get name.
    *
    * @return null.
    */
-  String getName();
+  String getName(); // inspection code warning: Method is never used.
 
   /**
    * set manufacturer.
    *
    * @param manufacturer - manufacturer.
    */
-  void setManufacturer(String manufacturer);
+  void setManufacturer(String manufacturer); // inspection code warning: Method is never used.
 
   /**
    * get manufacturer.
    *
    * @return null.
    */
-  String getManufacturer();
+  String getManufacturer(); // inspection code warning: Method is never used.
 }

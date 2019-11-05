@@ -8,12 +8,12 @@ import java.util.Date;
  *
  * @author - Odalys Martinez-Villa
  */
-public class ProductionRecord {
+class ProductionRecord {
   // variables
   private int productionNumber;
   private int productID;
-  private String serialNumber;
-  private Date dateProduced;
+  private final String serialNumber;
+  private final Date dateProduced;
 
   /**
    * Constructor that sets variables to their values.
@@ -21,7 +21,9 @@ public class ProductionRecord {
    * @param productProduced - Instance of Product.
    * @param itemCount - integer that counts the amount of items.
    */
-  public ProductionRecord(Product productProduced, int itemCount) {
+  public ProductionRecord(
+      Product productProduced,
+      int itemCount) { // inspection code warning: Constructor is never used.
     // String that formats the number.
     String idNum = String.format("%05d", itemCount);
 
@@ -55,7 +57,7 @@ public class ProductionRecord {
    * @param serialNumber - serial number of product.
    * @param dateProduced - date produced of product.
    */
-  public ProductionRecord(
+  public ProductionRecord( // inspection code warning: Constructor is never used.
       int productionNumber, int productID, String serialNumber, Date dateProduced) {
     this.productionNumber = productionNumber;
     this.productID = productID;

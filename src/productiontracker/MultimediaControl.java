@@ -5,12 +5,16 @@ package productiontracker;
  *
  * @author - Odalys Martinez-Villa
  */
-public interface MultimediaControl {
-  public void play();
+interface MultimediaControl {
+  /** A method to play. */
+  void play(); // inspection code warning: Method owner class is never instantiated.
 
-  public void stop();
+  /** A method to stop. */
+  void stop(); // inspection code warning: Method owner class is never instantiated.
 
-  public void previous();
+  /** A method to go previous. */
+  void previous(); // inspection code warning: Method owner class is never instantiated.
 
-  public void next();
+  /** A method to go next. */
+  void next(); // inspection code warning: Method owner class is never instantiated.
 }

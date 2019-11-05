@@ -12,8 +12,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
   private String mediaType;
 
   /**
-   * Constructor that sets values to the variables.
-   * Inherits from Product class.
+   * Constructor that sets values to the variables. Inherits from Product class.
    *
    * @param name - name of product, inherited.
    * @param manufacturer - manufacturer of product, inherited.
@@ -21,7 +20,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param audioSpecification - audio specification of product.
    * @param mediaType - media type of product.
    */
-  public AudioPlayer(
+  public AudioPlayer( // inspection code warning: Constructor is never used.
       String name,
       String manufacturer,
       ItemType type,
@@ -69,7 +68,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
    *
    * @return - audioSpecification
    */
-  public String getAudioSpecification() {
+  public String getAudioSpecification() { // inspection code warning: Method is never used.
     return audioSpecification;
   }
 
@@ -78,7 +77,10 @@ public class AudioPlayer extends Product implements MultimediaControl {
    *
    * @param audioSpecification - audio specification.
    */
-  public void setAudioSpecification(String audioSpecification) {
+  public void setAudioSpecification(
+      String
+          audioSpecification) { // inspection code warning: Method owner class is never
+                                // instantiated.
     this.audioSpecification = audioSpecification;
   }
 
@@ -87,7 +89,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    *
    * @return - mediaType.
    */
-  public String getMediaType() {
+  public String
+      getMediaType() { // inspection code warning: Method owner class is never instantiated.
     return mediaType;
   }
 
@@ -96,7 +99,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    *
    * @param mediaType - media type.
    */
-  public void setMediaType(String mediaType) {
+  public void setMediaType(
+      String mediaType) { // inspection code warning: Method owner class is never instantiated.
     this.mediaType = mediaType;
   }
 }

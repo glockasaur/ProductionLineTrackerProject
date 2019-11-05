@@ -1,7 +1,8 @@
 /* This document customizes the program.
   @author - Odalys Martinez-Villa */
+/* My name is a typo in Inspect Code */
 
-/* Makes the backround an orange color. */
+/* Makes the background an orange color. */
 #grid {
     -fx-background-image: url("solidOrange.jpg");
 }

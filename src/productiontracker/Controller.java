@@ -9,7 +9,6 @@ import java.sql.SQLException;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*; // Checkstyle warning: using * form of import should be avoided.
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,18 +22,25 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class Controller { // code inspection error: can be private.
 
   // FXML file
-  @FXML public Button AddProductButton; // checkstyle warning.
-  @FXML public Button RecordProductionNum1; // checkstyle warning.
-  @FXML private ComboBox ProduceComboBox; // checkstyle warning.
-  @FXML private ChoiceBox<String> ChooseType; // checkstyle warning.
-  @FXML private TableView<Product> prodLineTableView;
-  @FXML private TableColumn<?, ?> productNameCol;
-  @FXML private TableColumn<?, ?> manufacturerCol;
-  @FXML private TableColumn<?, ?> itemTypeCol;
-  @FXML private ListView<Product> produceListView;
-  @FXML private TextField textName;
-  @FXML private TextField textManufacturer;
-  @FXML private TextArea ProdTextArea; // checkstyle warning.
+  @FXML public Button AddProductButton; // checkstyle warning. Inspection code warning.
+
+  @FXML
+  public Button RecordProductionNum1; // checkstyle warning. inspection code warning: Entry point.
+
+  @FXML
+  private ComboBox ProduceComboBox; // checkstyle warning. inspection code warning: Entry point.
+
+  @FXML
+  private ChoiceBox<String> ChooseType; // checkstyle warning. Inspection code warning entry point.
+
+  @FXML private TableView<Product> prodLineTableView; // inspection code warning: Entry point.
+  @FXML private TableColumn<?, ?> productNameCol; // inspection code warning: Entry point.
+  @FXML private TableColumn<?, ?> manufacturerCol; // inspection code warning: Entry point.
+  @FXML private TableColumn<?, ?> itemTypeCol; // inspection code warning: Entry point.
+  @FXML private ListView<Product> produceListView; // inspection code warning: Entry point.
+  @FXML private TextField textName; // inspection code warning: Entry point.
+  @FXML private TextField textManufacturer; // inspection code warning: Entry point.
+  @FXML private TextArea ProdTextArea; // checkstyle warning. inspection code warning: entry point.
 
   // GLOBAL VARIABLE
   private Connection conn;
@@ -44,16 +50,17 @@ public class Controller { // code inspection error: can be private.
 
   /** button clicked to add to the List View. */
   @FXML
-  public void handleRecordButtonAction(ActionEvent event) {} // checkstyle warning: } should be alone on a line.
+  public void handleRecordButtonAction() {} // checkstyle warning: } should be alone on a line.
+  // inspection code warning: method id empty (have not worked on it yet.).
+  // inspection code warning: Entry point.
 
   /**
    * button clicked to add a name, manufacturer and item type record to database * and display it on
    * the TableView.
    *
-   * @param event - the event that the button is clicked.
    * @throws SQLException - uses SQL for the database.
    */
-  public void handleAddButtonAction(ActionEvent event) throws SQLException {
+  public void handleAddButtonAction() throws SQLException { // inspection code warning: entry point.
 
     // define an Observable list
 
@@ -82,15 +89,15 @@ public class Controller { // code inspection error: can be private.
     textManufacturer.clear();
 
     // When button is clicked, this will show in the tableView.
-    productNameCol.setCellValueFactory(new PropertyValueFactory("name"));
-    manufacturerCol.setCellValueFactory(new PropertyValueFactory("manufacturer"));
-    itemTypeCol.setCellValueFactory(new PropertyValueFactory("type"));
+    productNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+    manufacturerCol.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
+    itemTypeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
 
     // sets the items to productLine(observableList).
     prodLineTableView.setItems(productLine);
 
     // Uses Widget to add values of name, manufacturer and item type
-    productLine.add(new Widget(productName, productManufacturer, ItemType.valueOf((choice))));
+    productLine.add(new Widget(productName, productManufacturer, ItemType.valueOf(choice)));
 
     // sets the values from the product line to the ListView
     produceListView.setItems(productLine);
@@ -101,21 +108,23 @@ public class Controller { // code inspection error: can be private.
   }
 
   /** populate the combobox, choice box. Display a string into the TextArea. */
-  public void initialize() {
+  public void initialize() { // inspection code warning: entry point.
     // call to initialize the database connection.
     initializeData();
 
-    // for loop to populate the combo box.
+    // use Observable list to populate the combo box.
     ObservableList<Integer> list = FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    ProduceComboBox.setItems(list);
+    ProduceComboBox.setItems(
+        list); // inspection code warning: unchecked call to 'setItems(ObservableList)' as a member
+               // of raw type 'javafx.scene.control.ComboBox.
     ProduceComboBox.getSelectionModel().selectFirst();
     ProduceComboBox.setEditable(true);
 
     // enhanced for loop to populate the item choices
     ObservableList<String> itemList = FXCollections.observableArrayList();
-    for (ItemType ic : ItemType.values()) {
-      System.out.println(ic + " " + ic.values);
-      itemList.add(String.valueOf(ic));
+    for (ItemType typeItem : ItemType.values()) {
+      System.out.println(typeItem + " " + typeItem.values);
+      itemList.add(String.valueOf(typeItem));
     }
     ChooseType.getItems().addAll(itemList);
 

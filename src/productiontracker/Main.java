@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  * @author Odalys Martinez Villa References: Oracle, Vanselow website, codata.com, stackoverflow
  *     Professor Vanselow, classmates.
  */
-public class Main extends Application {
+public class Main extends Application { // inspection code warning: Entry point.
 
   /**
    * The starting point of a JavaFx program.
@@ -21,7 +21,7 @@ public class Main extends Application {
    * @throws Exception for the stage
    */
   @Override
-  public void start(Stage primaryStage) throws Exception {
+  public void start(Stage primaryStage) throws Exception { // inspection code warning: Entry point.
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
     Scene scene = new Scene(root, 600, 425);
     primaryStage.setTitle("Product Tracker");
@@ -37,7 +37,7 @@ public class Main extends Application {
    *
    * @param args - a String.
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) { // inspection code warning: Entry point.
     launch(args);
   }
 }

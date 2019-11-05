@@ -214,7 +214,7 @@ create table ProductionRecord
 -   Use a controller for almost all code.
 -   In the Product Line tab, for the Add Product button event handler, add code to insert a product into the database
     -   You could hard code this statement (for now) or build from the user interface, like `INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' );` See [JDBC - Insert Records Example](https://www.google.com/url?q=https%3A%2F%2Fwww.tutorialspoint.com%2Fjdbc%2Fjdbc-insert-records.htm&sa=D&sntz=1&usg=AFQjCNHuTo0mo6fnSqkICMWOAf1_-YINHQ)
-    -   To avoid a FingBugs error, use a Prepared Statement. See [JDBC PreparedStatement](http://www.google.com/url?q=http%3A%2F%2Ftutorials.jenkov.com%2Fjdbc%2Fpreparedstatement.html&sa=D&sntz=1&usg=AFQjCNHudvfsvi60EPJ3NYo9vrUTh9wA1g)
+    -   To avoid a FindBugs error, use a Prepared Statement. See [JDBC PreparedStatement](http://www.google.com/url?q=http%3A%2F%2Ftutorials.jenkov.com%2Fjdbc%2Fpreparedstatement.html&sa=D&sntz=1&usg=AFQjCNHudvfsvi60EPJ3NYo9vrUTh9wA1g)
     -   For now, every time a product is added to the database, output the full list of products to the console.
 -   In the Produce tab, for the ComboBox
     -   Populate with values 1-10 in an [_initialize_ method](https://www.google.com/url?q=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2F8%2Fjavafx%2Fapi%2Fjavafx%2Ffxml%2Fdoc-files%2Fintroduction_to_fxml.html%23controllers&sa=D&sntz=1&usg=AFQjCNG4hDHXzG52UWyZa9Qo9_EznSi24Q) in the Controller
@@ -255,7 +255,7 @@ VM
 -   See [Enum Types](https://www.google.com/url?q=https%3A%2F%2Fdocs.oracle.com%2Fjavase%2Ftutorial%2Fjava%2FjavaOO%2Fenum.html&sa=D&sntz=1&usg=AFQjCNEqSBXgT_50iDGl7XnYvKFMBKDmRQ) The Java™ Tutorials
 -   In the Product Line tab
     -   Fill the ChoiceBox with the types. You can use an enhanced for loop or addAll. All the constants of an enum type can be obtained by calling the implicit public static T[] values() method.
-    -   Update your code to insert a product to use the choicebox selected item.
+    -   Update your code to insert a product to use the choice box selected item.
 
 Create an **interface** called Item that will force all classes to implement the following functions:
 
@@ -264,7 +264,7 @@ Create an **interface** called Item that will force all classes to implement the
 -   A method getName that would return a String
 -   A method setManufacturer that would have one String parameter
 -   A method getManufacturer that would return a String
--   See [Java - Interfaces](https://www.google.com/url?q=https%3A%2F%2Fwww.tutorialspoint.com%2Fjava%2Fjava_interfaces.htm&sa=D&sntz=1&usg=AFQjCNFgbby7R0aifb91_APeXmoW4s7HqA) tutorialspoint
+-   See [Java - Interfaces](https://www.google.com/url?q=https%3A%2F%2Fwww.tutorialspoint.com%2Fjava%2Fjava_interfaces.htm&sa=D&sntz=1&usg=AFQjCNFgbby7R0aifb91_APeXmoW4s7HqA) tutorials point
 
 Create an **abstract type** called Product that will implement the Item interface. Product will implement the basic functionality that all items on a production line should have. Add the following fields to Product
 
@@ -352,8 +352,8 @@ Create an interface called ScreenSpec. This will define 3 methods:
 Create a class called Screen that implements ScreenSpec. Add three fields
 
 -   String resolution
--   int refreshrate
--   int responsetime
+-   int refresh rate
+-   int response time
 
 Complete the methods from the ScreenSpec interface.
 
@@ -453,7 +453,7 @@ The audio players and the movie players share the same control interface on the 
 
 Create a ProductionRecord class with int fields for productionNumber (this will be unique for every item produced and get auto incremented by the database), an int field for productID (to correspond to the productID from the Product table / class), String field for serialNumber, and a field for the dateProduced that is type Date (from java.util).
 
-Create accessors and mutators for all fields.
+Create accessors and mutator for all fields.
 
 Make one constructor that just has a parameter for the productID. This will be the constructor called when the user records production from the user interface.
 

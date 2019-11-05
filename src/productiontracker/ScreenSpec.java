@@ -5,47 +5,50 @@ package productiontracker;
  *
  * @author - Odalys Martinez-Villa
  */
-public interface ScreenSpec {
+interface ScreenSpec {
 
   /**
    * get the resolution.
    *
    * @return null.
    */
-  String getResolution();
+  String getResolution(); // inspection code warning: Method owner class is never instantiated.
 
   /**
    * get refresh rate.
    *
    * @return null.
    */
-  int getRefreshRate();
+  int getRefreshRate(); // inspection code warning: Method owner class is never instantiated.
 
   /**
    * get response rate.
    *
    * @return null.
    */
-  int getResponseTime();
+  int getResponseTime(); // inspection code warning: Method owner class is never instantiated.
 
   /**
    * set resolution.
    *
-   * @param resolution
+   * @param resolution - resolution.
    */
-  void setResolution(String resolution);
+  void setResolution(
+      String resolution); // inspection code warning: Method owner class is never instantiated.
 
   /**
    * set refresh rate.
    *
-   * @param refreshRate
+   * @param refreshRate - refresh rate.
    */
-  void setRefreshRate(int refreshRate);
+  void setRefreshRate(
+      int refreshRate); // inspection code warning: Method owner class is never instantiated.
 
   /**
    * set response rate.
    *
-   * @param responseTime
+   * @param responseTime - response time.
    */
-  void setResponseTime(int responseTime);
+  void setResponseTime(
+      int responseTime); // inspection code warning: Method owner class is never instantiated.
 }

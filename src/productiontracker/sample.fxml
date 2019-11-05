@@ -23,7 +23,7 @@
 
 <GridPane fx:id="grid" alignment="center" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="391.0"
           prefWidth="527.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="productiontracker.Controller">
+          fx:controller="productiontracker.Controller"> <!-- grid is unresolved fx:id reference and productiontracker is a typo.-->
     <columnConstraints>
         <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="-Infinity"/>
     </columnConstraints>
@@ -36,11 +36,11 @@
         <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0"/>
     </rowConstraints>
     <stylesheets>
-        <URL value="@../../../ProductionLineTrackerProject/src/productiontracker/ProductionLineTracker.css"/>
+        <URL value="@../../../ProductionLineTrackerProject/src/productiontracker/ProductionLineTracker.css"/> <!-- productiontracker is a type -->
     </stylesheets>
     <TabPane fx:id="tabPane" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
              prefHeight="409.0" prefWidth="570.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3">
-        <Tab text="Production Line">
+        <Tab text="Production Line"> <!-- tabPane is unresolved fx:id reference. -->
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="603.0">
                 <GridPane layoutX="31.0" layoutY="14.0" prefHeight="101.0" prefWidth="388.0">
                     <columnConstraints>

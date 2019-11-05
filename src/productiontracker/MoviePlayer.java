@@ -8,8 +8,8 @@ package productiontracker;
  */
 public class MoviePlayer extends Product implements MultimediaControl {
   // screen and monitorType variables
-  Screen screen;
-  MonitorType monitorType;
+  private Screen screen;
+  private MonitorType monitorType;
 
   /**
    * Constructor for MoviePlayer.
@@ -19,7 +19,11 @@ public class MoviePlayer extends Product implements MultimediaControl {
    * @param screen - screen of product.
    * @param monitorType - monitor type of product.
    */
-  public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
+  public MoviePlayer(
+      String name,
+      String manufacturer,
+      Screen screen,
+      MonitorType monitorType) { // inspection code warning: Constructor is never used.
     super(name, manufacturer, ItemType.Visual);
     this.screen = screen;
     setMonitorType(monitorType);
@@ -61,25 +65,27 @@ public class MoviePlayer extends Product implements MultimediaControl {
    *
    * @return screen.
    */
-  public Screen getScreen() {
+  public Screen getScreen() { // inspection code warning: Method owner class is never instantiated.
     return screen;
   }
 
   /**
-   * sets screen
+   * sets screen.
    *
-   * @param sCreen .
+   * @param screen .
    */
-  public void setScreen(Screen sCreen) {
+  public void setScreen(
+      Screen screen) { // inspection code warning: Method owner class is never instantiated.
     this.screen = screen;
   }
 
   /**
-   * gets monitor type
+   * gets monitor type.
    *
    * @return monitorType.
    */
-  public MonitorType getMonitorType() {
+  public MonitorType
+      getMonitorType() { // inspection code warning: Method owner class is never instantiated.
     return monitorType;
   }
 
@@ -88,7 +94,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
    *
    * @param monitorType .
    */
-  public void setMonitorType(MonitorType monitorType) {
+  private void setMonitorType(MonitorType monitorType) {
     this.monitorType = monitorType;
   }
 } // end of class.
