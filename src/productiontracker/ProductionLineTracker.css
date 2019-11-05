@@ -1,0 +1,22 @@
+/* This document customizes the program.
+  @author - Odalys Martinez-Villa */
+
+/* Makes the backround an orange color. */
+#grid {
+    -fx-background-image: url("solidOrange.jpg");
+}
+
+/* Changes the color of the button when the cursor hovers the button. */
+#AddProductButton:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+/* Changes the color of the button when the cursor hovers the button. */
+#RecordProductionNum1:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+/* The tab pane will be a coral color */
+#tabPane {
+    -fx-background-color: Coral;
+}
