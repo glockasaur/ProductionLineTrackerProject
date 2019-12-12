@@ -4,7 +4,7 @@
 
 /* Makes the background an orange color. */
 #grid {
-    -fx-background-image: url("solidOrange.jpg");
+    -fx-background-color: Coral;
 }
 
 /* Changes the color of the button when the cursor hovers the button. */
@@ -19,5 +19,5 @@
 
 /* The tab pane will be a coral color */
 #tabPane {
-    -fx-background-color: Coral;
+    -fx-background-color: Orange;
 }

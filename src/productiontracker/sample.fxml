@@ -4,7 +4,6 @@
 <!-- The GUI has 3 tabs: Production Line, Produce, and Production Log. -->
 <!-- Author: Odalys Martinez-Villa -->
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -21,7 +20,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane fx:id="grid" alignment="center" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="391.0" prefWidth="527.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productiontracker.Controller"> <!-- grid is unresolved fx:id reference and productiontracker is a typo.-->
+<GridPane fx:id="grid" alignment="center" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="391.0" prefWidth="527.0" stylesheets="@ProductionLineTracker.css" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="productiontracker.Controller"> <!-- grid is unresolved fx:id reference and productiontracker is a typo.-->
     <columnConstraints>
         <ColumnConstraints maxWidth="1.7976931348623157E308" minWidth="-Infinity" />
     </columnConstraints>
@@ -33,10 +32,7 @@
         <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
         <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
     </rowConstraints>
-    <stylesheets>
-        <URL value="@../../../ProductionLineTrackerProject/src/productiontracker/ProductionLineTracker.css" /> <!-- productiontracker is a type -->
-    </stylesheets>
-    <TabPane fx:id="tabPane" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="570.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3">
+    <TabPane fx:id="tabPane" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="570.0" stylesheets="@ProductionLineTracker.css" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3">
       <Tab text="Login">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -84,7 +80,7 @@
                     <ChoiceBox fx:id="ChooseType" prefHeight="25.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                 </GridPane>
-                <Button fx:id="AddProductButton" layoutX="245.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Add Product" />
+                <Button fx:id="AddProductButton" layoutX="245.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleAddButtonAction" stylesheets="@ProductionLineTracker.css" text="Add Product" />
                 <Label layoutX="195.0" layoutY="163.0" text="Existing Products" />
                 <TableView fx:id="prodLineTableView" layoutX="57.0" layoutY="187.0" prefHeight="177.0" prefWidth="413.0">
                     <columns>
@@ -101,7 +97,7 @@
                 <ListView fx:id="produceListView" layoutX="129.0" layoutY="30.0" prefHeight="187.0" prefWidth="386.0" />
                 <Label layoutX="22.0" layoutY="249.0" text="Choose Quantity" />
                 <ComboBox fx:id="ProduceComboBox" layoutX="141.0" layoutY="245.0" prefWidth="150.0" />
-                <Button fx:id="RecordProductionNum1" layoutX="339.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleRecordButtonAction" text="Record Production" />
+                <Button fx:id="RecordProductionNum1" layoutX="339.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleRecordButtonAction" stylesheets="@ProductionLineTracker.css" text="Record Production" />
             </AnchorPane>
         </Tab>
         <Tab text="Production Log">

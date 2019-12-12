@@ -53,16 +53,25 @@ public class Controller { // code inspection error: can be private.
   // observable list used for a production record.
   final ObservableList<ProductionRecord> productionRun = FXCollections.observableArrayList();
 
-  /** button clicked to add to the List View. */
+  /**
+   * button clicked to add to the List View. When the button is clicked, it will get the amount of
+   * products selected to be added to the database by using an ArrayList. *
+   *
+   * @throws SQLException - uses SQL for the database.
+   */
   public void handleRecordButtonAction() throws SQLException {
+    // get selected product from the list view.
     Product record = produceListView.getSelectionModel().getSelectedItem();
 
+    // get the quantity of the product from the combobox.
     int quantityAmt;
     quantityAmt =
         Integer.parseInt(String.valueOf(ProduceComboBox.getSelectionModel().getSelectedItem()));
 
+    // ProductionRecord object
     ProductionRecord pr;
 
+    // create an ArrayList of ProductionRecord objects named productionRun
     for (int i = 0; i < quantityAmt; i++) {
       pr = new ProductionRecord(record, i);
       productionRun.add(pr);
@@ -120,6 +129,9 @@ public class Controller { // code inspection error: can be private.
     loadProductList(productLine);
   }
 
+    /**
+     *
+     */
   public void handleLoginButtonAction() {
     employeeDetail();
   }
