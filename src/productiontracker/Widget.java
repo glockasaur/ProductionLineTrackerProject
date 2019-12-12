@@ -14,7 +14,7 @@ class Widget extends Product {
    * @param manufacturer - manufacturer of product.
    * @param type - type of manufacturer.
    */
-  public Widget(String name, String manufacturer, ItemType type) {
+  public Widget(String name, String manufacturer, ItemType type) { // inspection code warning: Constructor is never used.
     super(name, manufacturer, type);
   }
 }

@@ -57,7 +57,7 @@ class ProductionRecord {
    * @param serialNumber - serial number of product.
    * @param dateProduced - date produced of product.
    */
-  public ProductionRecord( // inspection code warning: Constructor is never used.
+  public ProductionRecord( // inspection code warning: Constructor is never used. //checkstyle error.
       int productionNumber, int productID, String serialNumber, Date dateProduced) {
     this.productionNumber = productionNumber;
     this.productID = productID;
@@ -65,11 +65,12 @@ class ProductionRecord {
     this.dateProduced = dateProduced;
   }
 
-  public int getProductionNumber() {
+  public int getProductionNumber() { // inspection code warning: method is never used.
     return productionNumber;
   }
 
-  public void setProductionNumber(int productionNumber) {
+  public void setProductionNumber(
+      int productionNumber) { // inspection code warning: method is never used. Checkstyle error.
     this.productionNumber = productionNumber;
   }
 
@@ -77,7 +78,7 @@ class ProductionRecord {
     return productID;
   }
 
-  public void setProductID(int productID) {
+  public void setProductID(int productID) { // inspection code warning: method is never used.
     this.productID = productID;
   }
 
@@ -85,7 +86,7 @@ class ProductionRecord {
     return serialNumber;
   }
 
-  public Date getDateProduced() {
+  public Date getDateProduced() { // inspection code warning: method is never used.
     return dateProduced;
   }
 

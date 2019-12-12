@@ -20,7 +20,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param audioSpecification - audio specification of product.
    * @param mediaType - media type of product.
    */
-  public AudioPlayer( // inspection code warning: Constructor is never used.
+  public AudioPlayer(// inspection code warning: Constructor is never used.
       String name,
       String manufacturer,
       ItemType type,

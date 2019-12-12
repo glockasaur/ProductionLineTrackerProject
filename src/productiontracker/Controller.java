@@ -2,7 +2,7 @@ package productiontracker;
 
 // checkstyle warning
 
-import java.sql.*;
+import java.sql.*; // checkstyle warning: * form of import should be avoided.
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,20 +38,19 @@ public class Controller { // code inspection error: can be private.
   @FXML private TextField textName; // inspection code warning: Entry point.
   @FXML private TextField textManufacturer; // inspection code warning: Entry point.
   @FXML private TextArea ProdTextArea; // checkstyle warning. inspection code warning: entry point.
-  @FXML private TextArea EmployeeTextArea;
-  @FXML private TextField loginUsername;
-  @FXML private TextField loginPassword;
-  @FXML private Button loginButton;
+  @FXML private TextArea EmployeeTextArea; // inspection code warning: Entry point.
+  @FXML private TextField loginUsername; // inspection code warning: Entry point.
+  @FXML private TextField loginPassword; // inspection code warning: Entry point.
+  @FXML private Button loginButton; // inspection code warning: Entry point.
 
-  // GLOBAL VARIABLES
-  private Statement stmt;
   private Connection conn;
 
   // observable list used for the table view.
   private final ObservableList<Product> productLine = FXCollections.observableArrayList();
 
   // observable list used for a production record.
-  final ObservableList<ProductionRecord> productionRun = FXCollections.observableArrayList();
+  private final ObservableList<ProductionRecord> productionRun =
+      FXCollections.observableArrayList(); // // checkstyle warning: line longer than 100 char.
 
   /**
    * button clicked to add to the List View. When the button is clicked, it will get the amount of
@@ -59,7 +58,8 @@ public class Controller { // code inspection error: can be private.
    *
    * @throws SQLException - uses SQL for the database.
    */
-  public void handleRecordButtonAction() throws SQLException {
+  public void handleRecordButtonAction()
+      throws SQLException { // inspection code warning: Entry point.
     // get selected product from the list view.
     Product record = produceListView.getSelectionModel().getSelectedItem();
 
@@ -129,10 +129,9 @@ public class Controller { // code inspection error: can be private.
     loadProductList(productLine);
   }
 
-    /**
-     *
-     */
-  public void handleLoginButtonAction() {
+  /** When login button is clicked in the login page. */
+  public void handleLoginButtonAction() { // inspection code warning: Entry point.
+    // Call employeeDetail method.
     employeeDetail();
   }
 
@@ -141,11 +140,16 @@ public class Controller { // code inspection error: can be private.
    *
    * @param productLine - observableList.
    */
-  private void setupProductLineTable(ObservableList<Product> productLine) {
-    // When button is clicked, this will show in the tableView.
-    productNameCol.setCellValueFactory(new PropertyValueFactory("name"));
-    manufacturerCol.setCellValueFactory(new PropertyValueFactory("manufacturer"));
-    itemTypeCol.setCellValueFactory(new PropertyValueFactory("type"));
+  private void setupProductLineTable(
+      ObservableList<Product>
+          productLine) { // inspection code warning: parameter 'productLine' is not used.
+    // set the column titles to : name, manufacturer, type.
+    productNameCol.setCellValueFactory(
+        new PropertyValueFactory("name")); // code inspection error: unchecked assignment
+    manufacturerCol.setCellValueFactory(
+        new PropertyValueFactory("manufacturer")); // code inspection error: unchecked assignment
+    itemTypeCol.setCellValueFactory(
+        new PropertyValueFactory("type")); // code inspection error: unchecked assignment
 
     // sets the items to productLine(observableList).
     prodLineTableView.setItems(this.productLine);
@@ -154,17 +158,27 @@ public class Controller { // code inspection error: can be private.
     produceListView.setItems(this.productLine);
   }
 
+  /**
+   * Creates Product objects from the Product database table and adds them to the productLine
+   * Observable list.
+   *
+   * @param productLine - an Observable List.
+   * @throws SQLException - uses SQL.
+   */
   private void loadProductList(ObservableList<Product> productLine) throws SQLException {
+    // Use SQL to select from the Product database.
     String loadsql = "SELECT * FROM PRODUCT";
 
     Statement statement = conn.createStatement();
     ResultSet rs = statement.executeQuery(loadsql);
+
     while (rs.next()) {
       // these lines correspond to the database table columns
       String name = rs.getString(2);
       String manufacturer = rs.getString(3);
       String type = rs.getString(4);
-      Product prodDB = new Product(name, manufacturer, ItemType.valueOf((type))) {};
+      // Create a new Product object.
+      Product prodDB = new Product(name, manufacturer, ItemType.valueOf(type)) {};
       // save to observable list.
       productLine.add(prodDB);
     }
@@ -189,7 +203,7 @@ public class Controller { // code inspection error: can be private.
    */
   private void addToProductionDB(ObservableList<ProductionRecord> productionRun)
       throws SQLException {
-    // for loop to i
+    // for loop through the ProductionRun observable list.
     for (ProductionRecord pr : productionRun) {
       int prodID = pr.getProductID();
       String serialNumber = pr.getSerialNumber();
@@ -200,7 +214,7 @@ public class Controller { // code inspection error: can be private.
           "INSERT INTO PRODUCTIONRECORD(PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED)VALUES (?,?,?)";
       PreparedStatement pstmt = conn.prepareStatement(sql);
 
-      //
+      // Set the object information into the database.
       pstmt.setInt(1, prodID);
       pstmt.setString(2, serialNumber);
       pstmt.setTimestamp(3, timestamp);
@@ -208,49 +222,65 @@ public class Controller { // code inspection error: can be private.
       // execute update the prepared statement.
       pstmt.executeUpdate();
 
-      //
+      // update the production tab with the new objects automatically.
       showProduction(productionRun);
     }
   }
 
+  /**
+   * Method that creates ProductionRecord objects from the records in the Production Record database
+   * table and populate the production Log Array List.
+   *
+   * @param productionRun - observable List.
+   * @throws SQLException - uses SQL.
+   */
   private void loadProductionLog(ObservableList<ProductionRecord> productionRun)
       throws SQLException {
-    //
+    // Use SQL to select data from the database.
     String sql = "SELECT * FROM PRODUCTIONRECORD";
-    stmt = conn.createStatement();
+    // GLOBAL VARIABLES
+    Statement stmt = conn.createStatement();
 
-    //
+    // the data from the database.
     ResultSet rs = stmt.executeQuery(sql);
 
+    // While looping through each record, get the number, id, serial number, and date produced of
+    // that record.
     while (rs.next()) {
       int num = rs.getInt("Production_Num");
       int id = rs.getInt("Product_ID");
       String serial = rs.getString("Serial_Num");
       Date date = rs.getDate("Date_Produced");
 
-      //
-      ProductionRecord DBRecord = new ProductionRecord(num, id, serial, date) {};
+      // create an object from the ProductionRecord database.
+      ProductionRecord DBRecord = new ProductionRecord(num, id, serial, date) {}; // checkstyle warning
 
-      //
+      // Print the object into a string.
       System.out.println(DBRecord.toString());
 
-      //
+      // Populate the productionLog Array list.
       productionRun.add(DBRecord);
 
-      //
+      // Show the productionLog Array list into the production Log tab.
       showProduction(productionRun);
     }
   }
 
-  public void employeeDetail() {
+  /** Method that reverses the order of the password of the Employee. */
+  private void employeeDetail() {
+    // name of Employee.
     String name = loginUsername.getText();
 
+    // password of employee.
     String password = loginPassword.getText();
 
+    // create new employee object using the name and password.
     Employee employee = new Employee(name, password);
+    // prints out the reverse order of the password from the employee.
     System.out.println(employee.reverseString(password));
     System.out.println(employee);
 
+    // set the textArea of the employee tab to the information of the employee.
     EmployeeTextArea.setText(String.valueOf(employee));
   }
 
