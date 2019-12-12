@@ -20,7 +20,7 @@ public enum ItemType {
    * @param value - value.
    */
   ItemType(String value) {
-    values = value;
+    this.values = value;
   }
 
   /**

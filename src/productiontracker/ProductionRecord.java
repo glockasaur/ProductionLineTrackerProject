@@ -65,6 +65,30 @@ class ProductionRecord {
     this.dateProduced = dateProduced;
   }
 
+  public int getProductionNumber() {
+    return productionNumber;
+  }
+
+  public void setProductionNumber(int productionNumber) {
+    this.productionNumber = productionNumber;
+  }
+
+  public int getProductID() {
+    return productID;
+  }
+
+  public void setProductID(int productID) {
+    this.productID = productID;
+  }
+
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+  public Date getDateProduced() {
+    return dateProduced;
+  }
+
   /**
    * Prints out a String that gives information about the Product.
    *

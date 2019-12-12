@@ -78,9 +78,8 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * @param audioSpecification - audio specification.
    */
   public void setAudioSpecification(
-      String
-          audioSpecification) { // inspection code warning: Method owner class is never
-                                // instantiated.
+      String audioSpecification) { // inspection code warning: Method owner class is never
+    // instantiated.
     this.audioSpecification = audioSpecification;
   }
 
